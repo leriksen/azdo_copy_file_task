@@ -6,6 +6,8 @@ resources:
       name: leriksen/azdo_copy_file_task
       type: github
 
+pool: ipam-devops
+
 stages:
   - stage: artifact
     displayName: Create Artifact
