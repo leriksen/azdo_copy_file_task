@@ -28,7 +28,7 @@ stages:
             displayName: Create project zip
             inputs:
               rootFolderOrFile: $(System.DefaultWorkingDirectory)/project_output
-              includeRootFolder: true
+              includeRootFolder: false
               archiveType: zip
               archiveFile: $(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip
               replaceExistingArchive: true
