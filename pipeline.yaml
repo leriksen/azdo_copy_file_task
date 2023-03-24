@@ -3,7 +3,7 @@ resources:
     - repository: github
       endpoint: github
       trigger: none
-      name: leriksen/azdo_file_copy_task
+      name: leriksen/azdo_copy_file_task
       type: github
 
 stages:
