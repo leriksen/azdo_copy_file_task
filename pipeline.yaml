@@ -14,11 +14,11 @@ stages:
         displayName: Create Artifact
         steps:
           - task: CopyFiles@2
-           displayName: Copy Files
-           inputs:
-             SourceFolder: $(System.DefaultWorkingDirectory)
-             TargetFolder: project_output
-             CleanTargetFolder: true
+            displayName: Copy Files
+            inputs:
+              SourceFolder: $(System.DefaultWorkingDirectory)
+              TargetFolder: project_output
+              CleanTargetFolder: true
           
           - task: ArchiveFiles@2
             displayName: Create project zip
