@@ -18,7 +18,9 @@ stages:
           - task: CopyFiles@2
             displayName: Copy Files
             inputs:
-              SourceFolder: $(System.DefaultWorkingDirectory)
+              SourceFolder: |
+                **/*
+                !.git/**/*
               TargetFolder: project_output
               CleanTargetFolder: true
           
