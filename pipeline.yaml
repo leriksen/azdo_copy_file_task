@@ -1,0 +1,29 @@
+stages:
+  - stage: artifact
+    displayName: Create Artifact
+    jobs:
+      - job: artifact
+        displayName: Create Artifact
+        steps:
+          - task: CopyFiles@2
+           displayName: Copy Files
+           inputs:
+             SourceFolder: $(System.DefaultWorkingDirectory)
+             TargetFolder: project_output
+             CleanTargetFolder: true
+          
+          - task: ArchiveFiles@2
+            displayName: Create project zip
+            inputs:
+              rootFolderOrFile: $(System.DefaultWorkingDirectory)/project_output
+              includeRootFolder: false
+              archiveType: zip
+              archiveFile: $(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip
+              replaceExistingArchive: true
+
+          - task: PublishPipelineArtifact@1
+            displayName: Publish project zip artifact
+            inputs:
+              targetPath: $(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip
+              artifact: $(logicAppCIArtifactName)
+              publishLocation: pipeline
