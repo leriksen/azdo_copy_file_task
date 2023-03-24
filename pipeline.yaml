@@ -18,7 +18,7 @@ stages:
           - task: CopyFiles@2
             displayName: Copy Files
             inputs:
-              SourceFolder: |
+              Contents: |
                 **/*
                 !.git/**/*
               TargetFolder: project_output
