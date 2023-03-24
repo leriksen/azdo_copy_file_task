@@ -1,3 +1,11 @@
+resources:
+  repositories:
+    - repository: github
+      endpoint: github
+      trigger: none
+      name: azdo_file_copy_task
+      type: github
+
 stages:
   - stage: artifact
     displayName: Create Artifact
